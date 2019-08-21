@@ -13,5 +13,6 @@ namespace Plugin.Toasts
         public string HexColor { get; set; } = "#FFFFFFFF";
         public bool ForceOpenAppOnNotificationTap { get; set; } = false;
         public AndroidChannelOptions ChannelOptions { get; set; } = new AndroidChannelOptions();
+        public string BigStyleText { get; set; } = null;
     }
 }

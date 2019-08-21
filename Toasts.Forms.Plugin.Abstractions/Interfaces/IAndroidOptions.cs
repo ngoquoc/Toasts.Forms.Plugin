@@ -31,5 +31,7 @@ namespace Plugin.Toasts
         /// </summary>
         /// <value>The notification channel options.</value>
         AndroidChannelOptions ChannelOptions { get; set; }
+
+        string BigStyleText { get; set; }
     }
 }

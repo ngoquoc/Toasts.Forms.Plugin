@@ -222,6 +222,15 @@ namespace Plugin.Toasts
                     .SetDeleteIntent(pendingDismissIntent)
                     .SetColor(Color.ParseColor(options.AndroidOptions.HexColor));
 
+                var hasBigText = !string.IsNullOrWhiteSpace(options.AndroidOptions.BigStyleText);
+                if (hasBigText || options.Description.Length >= 40)
+                {
+                    var bigText = hasBigText ? options.AndroidOptions.BigStyleText : options.Description;
+                    Android.App.Notification.BigTextStyle textStyle = new Android.App.Notification.BigTextStyle();
+                    textStyle.BigText(bigText);
+                    builder.SetStyle(textStyle);
+                }
+
                 try
                 {
                     // Notification Channel
